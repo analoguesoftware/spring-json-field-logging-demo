@@ -1,6 +1,6 @@
 plugins {
 	java
-	id("org.springframework.boot") version "3.3.3"
+	id("org.springframework.boot") version "3.4.0-M2"
 	id("io.spring.dependency-management") version "1.1.6"
 }
 
@@ -15,11 +15,11 @@ java {
 
 repositories {
 	mavenCentral()
+	maven { url = uri("https://repo.spring.io/milestone") }
 }
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
-	runtimeOnly("net.logstash.logback:logstash-logback-encoder:8.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
